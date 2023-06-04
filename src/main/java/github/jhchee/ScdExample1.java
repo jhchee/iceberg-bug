@@ -16,18 +16,16 @@ public class ScdExample1 extends IcebergWrapper {
         SparkSession spark = getSession("ScdExample1");
 
         // create if not exists
-        if (spark.catalog().tableExists("default.user_scd")) {
-            spark.sql("CREATE TABLE default.user_scd ( " +
-                    "user_id string, " +
-                    "first_name string, " +
-                    "last_name string, " +
-                    "valid_from timestamp, " +
-                    "valid_to timestamp, " +
-                    "is_current boolean, " +
-                    "checksum string " +
-                    ") " +
-                    "USING iceberg");
-        }
+        spark.sql("CREATE TABLE IF NOT EXISTS default.user_scd ( " +
+                "user_id string, " +
+                "first_name string, " +
+                "last_name string, " +
+                "valid_from timestamp, " +
+                "valid_to timestamp, " +
+                "is_current boolean, " +
+                "checksum string " +
+                ") " +
+                "USING iceberg");
 
         List<Row> rows = Arrays.asList(
                 RowFactory.create("9612e6e0-2a7f-4198-a617-ad5b5f8e8307", "Mike", "Smith"),
