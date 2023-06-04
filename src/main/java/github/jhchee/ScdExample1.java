@@ -25,7 +25,9 @@ public class ScdExample1 extends IcebergWrapper {
                 "is_current boolean, " +
                 "checksum string " +
                 ") " +
-                "USING iceberg");
+                "USING iceberg " +
+                "TBLPROPERTIES ('format-version'='2')"+
+                "");
 
         List<Row> rows = Arrays.asList(
                 RowFactory.create("9612e6e0-2a7f-4198-a617-ad5b5f8e8307", "Mike", "Smith"),
