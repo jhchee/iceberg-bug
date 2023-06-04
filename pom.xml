@@ -14,7 +14,7 @@
         <spark.version>3.3.1</spark.version>
         <spark.comp.version>3.3</spark.comp.version>
         <scala.version>2.12</scala.version>
-        <icerberg.version>1.1.0</icerberg.version>
+        <icerberg.version>1.2.0</icerberg.version>
         <hadoop.version>3.2.2</hadoop.version>
         <snowflake.version>2.11.3</snowflake.version>
     </properties>
